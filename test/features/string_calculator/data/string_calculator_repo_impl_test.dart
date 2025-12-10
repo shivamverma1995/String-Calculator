@@ -11,4 +11,12 @@ void main() {
   test("empty string returns 0", () {
     expect(repo.add(""), 0);
   });
+
+  test("single number returns its value", () {
+    expect(repo.add("1"), 1);
+  });
+
+  test("two numbers comma seprated are summed", () {
+    expect(repo.add("1,5"), 6);
+  });
 }
