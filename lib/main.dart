@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:string_calculator_kata/features/string_calculator/presentation/string_calculator_page.dart';
+import 'package:string_calculator_kata/injectable/injectable.dart';
 
 void main() {
+  configureDependencies();
   runApp(const MyApp());
 }
 
