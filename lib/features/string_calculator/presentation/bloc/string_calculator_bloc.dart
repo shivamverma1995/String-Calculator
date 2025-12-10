@@ -13,7 +13,12 @@ class StringCalculatorBloc
     extends Bloc<StringCalculatorEvent, StringCalculatorState> {
   final AddNumberUseCase _useCase;
   StringCalculatorBloc(this._useCase) : super(StringCalculatorState()) {
-    on<StringCalculatorEvent>((event, emit) => event);
+    on<StringCalculatorEvent>(
+      (event, emit) => event.when(
+        inputChanged: (input) => _onInputChanged(emit, input),
+        submitted: () => _onSubmitted(emit),
+      ),
+    );
   }
 
   void _onInputChanged(Emitter emit, String input) {
